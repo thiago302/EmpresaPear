@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Cadastre_se\**" />
+    <Content Remove="Views\Cadastre_se\**" />
+    <EmbeddedResource Remove="Views\Cadastre_se\**" />
+    <None Remove="Views\Cadastre_se\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Cadastre-seController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 

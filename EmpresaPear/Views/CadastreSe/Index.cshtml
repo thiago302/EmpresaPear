@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<section class="area-login6">
+    <div class="title-principal6">
+        <h1>
+            Crie já sua conta e faça parte<br> da família Pear, a empresa de<br> serviços
+            em nuvem que mais<br> cresce em todo o Brasil.
+        </h1>
+    </div>
+    <div class="login6">
+        <div>
+            <img src="img/PEAR PNG.png" alt="Logo da empresa, composto por um desenho de pera onde dentro possui o nome Pear.">
+        </div>
+        <form method="post">
+            <input type="text" name="nome" placeholder="Nome completo" autofocus>
+            <input type="tel" name="telefone" placeholder="Telefone">
+            <input type="date" name="data" placeholder="Data de nascimento">
+            <input type="email" name="email" placeholder="Email" id="email">
+            <input type="email" name="email" placeholder="Confirme seu email">
+            <input type="password" name="senha" placeholder="Senha" id="senha">
+            <input type="password" name="senha" placeholder="Confirme sua senha">
+            <input type="submit" value="Criar conta" onclick="logar(); return false">
+        </form>
+    </div>
+</section>
+
+<script>
+
+    function logar() {
+        var email = document.getElementById('email').value;
+        var senha = document.getElementById('senha').value;
+
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('senha', senha);
+
+        window.location.href = '@Url.Action("Index", "Entrar")';
+
+    }
+</script>
+
+

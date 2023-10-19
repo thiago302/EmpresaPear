@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="area-login">
+    <div class="login">
+        <div>
+            <img src="img/PEAR PNG.png" alt="Logo da empresa, composto por um desenho de pera onde dentro possui o nome Pear.">
+        </div>
+        <form method="post">
+            <input type="email" name="nome" placeholder="Nome de Usuário" id="email5" autofocus>
+            <input type="password" name="senha" placeholder="Sua senha" id="senha5">
+            <input type="submit" value="Entrar" onclick="Validar(); return false">
+        </form>
+        <p class="p5">Ainda não tem uma conta?<a class="a5" href="criarconta.html">Criar conta</a></p>
+    </div>
+</section>
+
+<script>
+    // Recuperar os valores armazenados no sessionStorage
+    var storedEmail = sessionStorage.getItem('email');
+    var storedSenha = sessionStorage.getItem('senha');
+
+    // Preencher os campos de entrada
+    document.getElementById('email5').value = storedEmail;
+    document.getElementById('senha5').value = storedSenha;
+
+    function Validar() {
+        var emailDigitado = document.getElementById('email5').value;
+        var senhaDigitada = document.getElementById('senha5').value;
+
+        // Comparar com os valores armazenados
+        if (emailDigitado == storedEmail && senhaDigitada == storedSenha) {
+            window.location.href = '@Url.Action("Index", "Home")'; // Substitua "OutraPagina" e "Controlador" com os valores reais da sua outra página e controlador
+            return false; // Para evitar o envio do formulário
+        } else {
+            alert('Credenciais inválidas. Tente novamente.');
+            return false; // Para evitar o envio do formulário
+        }
+    }
+
+
+</script>
+
+
